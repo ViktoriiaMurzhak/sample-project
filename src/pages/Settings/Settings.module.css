@@ -1,0 +1,11 @@
+.passWrap {
+  position: relative;
+}
+
+.buttonPass {
+  position: absolute;
+  background-color: transparent;
+  color: var(--accent-main);
+  top: 8px;
+  right: 10px;
+}

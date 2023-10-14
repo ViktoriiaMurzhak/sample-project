@@ -1,0 +1,6 @@
+.placeholder {
+  position: absolute;
+  background-color: rgb(99, 102, 241, 0.1);
+  border-radius: 12px;
+  border: dashed 1px var(--accent-main);
+}

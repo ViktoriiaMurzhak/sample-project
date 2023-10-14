@@ -1,0 +1,72 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px 20px;
+  min-width: 320px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.bell {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: var(--accent-focus);
+
+  border-radius: 4px;
+}
+
+.bellMessage {
+  top: 12px;
+  right: 12px;
+  width: 7px;
+  height: 7px;
+  position: absolute;
+  background-color: var(--error-color);
+  border-radius: 50%;
+}
+.bell svg {
+  width: 20px;
+  height: 20px;
+}
+
+.bell:hover {
+  color: var(--accent-main);
+  background-color: var(--accent-light);
+}
+
+.link {
+  color: #ffffff;
+}
+
+.link:hover {
+  color: var(--accent-focus);
+}
+
+@media screen and (min-width: 481) {
+  .container {
+    padding: 10px 32px;
+    max-width: 767px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 10px 38px;
+    max-width: 1440px;
+  }
+}

@@ -1,0 +1,128 @@
+:root {
+  /* Background Colors */
+  --background-default-gradient: linear-gradient(to right, #373b44, #4286f4);
+  --background-radial-gradient: radial-gradient(circle, #2a3a53 0%, #4286f4 35%, #000000 100%);
+  --profile-background-gradient: radial-gradient(circle, #ebecf0 0%, #f4f4f4 35%, #fff 100%);
+
+  /* Text Colors */
+  --text-main: #2c2929;
+  --text-second: rgba(94, 95, 101, 0.824);
+  --text-gray: #5e6c84;
+  --text-light: #d1e8ff;
+  --text-accent: #429dff;
+
+  /* Accent Colors */
+  --accent-focus: #0b6bcb;
+  --accent-main: #2c2c2c;
+  --accent-secondary: #003162;
+  --accent-dark: #001325;
+  --accent-light: #0b6bcb3d;
+
+  --error-color: #ae1313;
+
+  /* Board Colors */
+  --board-gray: #bdbdbd;
+  --board-normal-gray: #e2e2e2;
+
+  --board-base-gray: #ebecf0;
+  --board-dark-gray: #636363;
+  --board-light-gray: #f4f4f4;
+  --board-white: #ffffff;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Noto Sans', sans-serif;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  width: 100%;
+  color: var(--text-main);
+  background-color: #ffffff;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+input,
+a,
+button,
+textarea {
+  font-family: inherit;
+  text-transform: none;
+  outline: none;
+  border: none;
+  color: var(--text-main);
+}
+
+input::-ms-clear {
+  display: none;
+}
+button {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+a,
+a:visited {
+  font-style: normal;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+}
+a:hover {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 400;
+  color: var(--text-main);
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
