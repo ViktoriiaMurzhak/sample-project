@@ -12,7 +12,7 @@ const DnD = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const photosList = await getAllPhotos();
+      const photosList = await getAllPhotos(10, 'cats');
       setPhotos(photosList.photos);
     };
     fetchData();
@@ -81,7 +81,8 @@ const DnD = () => {
                               }}
                             >
                               <img
-                                src={p.src.original}
+                                loading="lazy"
+                                src={p.src.medium}
                                 alt="photo"
                                 width={'220px'}
                                 style={{

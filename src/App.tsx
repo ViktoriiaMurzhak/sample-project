@@ -15,6 +15,8 @@ import Settings from './pages/Settings';
 import DnD from './pages/DnD';
 import Profile from './pages/Profile';
 import Portfolio from './pages/Portfolio';
+import Weather from './pages/Weather';
+import Gallery from './pages/Gallery';
 
 function App() {
   return (
@@ -42,8 +44,9 @@ function App() {
                 <Route path="table" element={<Table />} />
                 <Route path="dnd" element={<DnD />} />
                 <Route path="profile" element={<Profile />} />
-
+                <Route path="weather" element={<Weather />} />
                 <Route path="settings" element={<Settings />} />
+                <Route path="gallery" element={<Gallery />} />
               </Route>
             </Route>
             <Route path="login" element={<SignIn />} />

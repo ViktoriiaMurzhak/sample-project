@@ -2,6 +2,7 @@
   /* Background Colors */
   --background-default-gradient: linear-gradient(to right, #373b44, #4286f4);
   --background-radial-gradient: radial-gradient(circle, #2a3a53 0%, #4286f4 35%, #000000 100%);
+  --background-title-gradient: radial-gradient(circle, #2a3a53 0%, #4286f4 35%, #100f3f 100%);
   --profile-background-gradient: radial-gradient(circle, #ebecf0 0%, #f4f4f4 35%, #fff 100%);
 
   /* Text Colors */
@@ -126,3 +127,15 @@ img {
   max-width: 100%;
   height: auto;
 }
+.each-slide-effect > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  height: 350px;
+}
+
+/* .react-slideshow-fadezoom-images-wrap {
+  width: 100% !important;
+  height: 288px !important;
+} */

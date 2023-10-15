@@ -13,5 +13,9 @@ export type Photos = {
   alt: string;
   photographer: string;
   url: string;
-  src: { original: string };
+  webformatURL: string;
+  largeImageURL: string;
+  tags: string;
+
+  src: { medium: string; original: string };
 };

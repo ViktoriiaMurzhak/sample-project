@@ -88,6 +88,24 @@ const Sidebar = () => {
           <ListItem>
             <ListItemButton onClick={() => closeSidebar()}>
               <ListItemContent sx={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <NavLink className={activeClassName} to="weather">
+                  {t('sidebar_nav_weather')}
+                </NavLink>
+              </ListItemContent>
+            </ListItemButton>
+          </ListItem>
+          <ListItem>
+            <ListItemButton onClick={() => closeSidebar()}>
+              <ListItemContent sx={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <NavLink className={activeClassName} to="gallery">
+                  {t('gallery_header')}
+                </NavLink>
+              </ListItemContent>
+            </ListItemButton>
+          </ListItem>
+          <ListItem>
+            <ListItemButton onClick={() => closeSidebar()}>
+              <ListItemContent sx={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <NavLink className={activeClassName} to="portfolio">
                   {t('sidebar_nav_portfolio')}
                 </NavLink>
