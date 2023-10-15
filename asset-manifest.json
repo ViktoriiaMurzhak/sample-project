@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/sample-project/static/css/main.c3314987.css",
+    "main.js": "/sample-project/static/js/main.bab83169.js",
+    "static/media/IMG_4277.png": "/sample-project/static/media/IMG_4277.dbe636afd516d3e089be.png",
+    "static/media/android-chrome-512x512.png": "/sample-project/static/media/android-chrome-512x512.01f93d1c3223663abbc7.png",
+    "index.html": "/sample-project/index.html",
+    "main.c3314987.css.map": "/sample-project/static/css/main.c3314987.css.map",
+    "main.bab83169.js.map": "/sample-project/static/js/main.bab83169.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c3314987.css",
+    "static/js/main.bab83169.js"
+  ]
+}
