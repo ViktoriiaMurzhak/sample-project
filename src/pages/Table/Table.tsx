@@ -1,7 +1,6 @@
 import { Box, Typography, Input, FormControl, FormLabel } from '@mui/joy';
 import React, { useEffect, useState } from 'react';
 
-import { getAll } from '../../services/api';
 import { useTranslation } from 'react-i18next';
 import TableData from '../../components/Profile/TableData';
 import { Users } from '../../utils/types';
@@ -13,7 +12,7 @@ const Table = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
 
   const handleFilter = () => {
-    const filtered = data.filter((user: Users) =>
+    const filtered = data?.filter((user: Users) =>
       user.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
     setFilteredUsers(filtered);
@@ -21,8 +20,13 @@ const Table = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const usersList = await getAll();
-      setData(usersList);
+      fetch(`https://jsonplaceholder.typicode.com/users`)
+        .then(resp => {
+          return resp.json();
+        })
+        .then(data => {
+          setData(data);
+        });
     };
     fetchData();
   }, []);

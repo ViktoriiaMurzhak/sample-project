@@ -1,14 +1,16 @@
 import { Box, Button, IconButton, Input, List, Typography } from '@mui/joy';
-import { t } from 'i18next';
-import React, { useEffect, useState } from 'react';
+
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BiSearch } from 'react-icons/bi';
 import GalleryItem from '../../components/Gallery/GalleryItem';
 import Slider from '../../components/Gallery/Slide';
 import Loader from '../../components/Loader/Loader';
-import { getAllImages } from '../../services/api';
+
 import { StatusForAll } from '../../utils/status';
 import { Photos } from '../../utils/types';
+
+const API_KEY_PIXABAY = '40069201-fe2fb636f4d33f18dc4a5f0d0';
 
 const Gallery = () => {
   const { t } = useTranslation();
@@ -23,15 +25,21 @@ const Gallery = () => {
 
     const getData = async () => {
       try {
-        const data = await getAllImages(20, value);
-        setImages(data.hits);
-        setStatus(StatusForAll.success);
+        fetch(
+          `https://pixabay.com/api/?key=${API_KEY_PIXABAY}&q=${value}&image_type=photo&per_page=${20}&orientation=horizontal`
+        )
+          .then(resp => {
+            return resp.json();
+          })
+          .then(data => {
+            setImages(data.hits);
+            setStatus(StatusForAll.success);
+          });
       } catch {
         setStatus(StatusForAll.error);
       }
     };
     getData();
-    // eslint-disable-next-line
   }, [value]);
 
   const handleChange = (value: string) => {

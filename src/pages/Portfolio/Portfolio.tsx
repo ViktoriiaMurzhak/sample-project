@@ -54,11 +54,10 @@ const Portfolio = () => {
                   p: 1,
                   alignItems: 'center',
                 }}
+                key={tech.id}
               >
                 <Box sx={{ color: 'var(--accent-focys)' }}>{tech.url}</Box>
-                <Typography key={tech.id} level="body-md">
-                  {tech.name}
-                </Typography>
+                <Typography level="body-md">{tech.name}</Typography>
               </Box>
             ))}
           </Box>
@@ -85,11 +84,10 @@ const Portfolio = () => {
                   p: 1,
                   alignItems: 'center',
                 }}
+                key={tech.id}
               >
                 <Box sx={{ color: 'var(--accent-focys)' }}>{tech.url}</Box>
-                <Typography key={tech.id} level="body-md">
-                  {tech.name}
-                </Typography>
+                <Typography level="body-md">{tech.name}</Typography>
               </Box>
             ))}
           </Box>

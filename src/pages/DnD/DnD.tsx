@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Card, List, ListItem, Typography } from '@mui/joy';
 import { useTranslation } from 'react-i18next';
-import { getAllPhotos } from '../../services/api';
 import { Photos } from '../../utils/types';
 import { DragDropContext, Draggable } from 'react-beautiful-dnd';
 import { StrictModeDroppable } from '../../components/StrictModeDroppable';
+
+const MY_API_KEY = 'XvEvBuOYbL3HQjkUzq3yTOwMr5fYorPP4TYH7qxboGmmKW2ALQ4adJIe';
 
 const DnD = () => {
   const { t } = useTranslation();
@@ -12,8 +13,17 @@ const DnD = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const photosList = await getAllPhotos(10, 'cats');
-      setPhotos(photosList.photos);
+      fetch(`https://api.pexels.com/v1/search?query=${'cats'}&per_page=${10}`, {
+        headers: {
+          Authorization: MY_API_KEY,
+        },
+      })
+        .then(resp => {
+          return resp.json();
+        })
+        .then(data => {
+          setPhotos(data?.photos);
+        });
     };
     fetchData();
   }, []);
@@ -63,7 +73,7 @@ const DnD = () => {
                   ref={provided.innerRef}
                   {...provided.droppableProps}
                 >
-                  {photos.length > 0 &&
+                  {photos?.length > 0 &&
                     photos.map((p: Photos, index: number) => (
                       <Draggable draggableId={p.id.toString()} index={index} key={p.id}>
                         {provided => (

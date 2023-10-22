@@ -6,7 +6,6 @@ import { MdLanguage } from 'react-icons/md';
 const languages = ['en', 'ua'];
 
 const ToggleLanguage = () => {
-  const language = localStorage.getItem('i18nextLng');
   const { i18n } = useTranslation();
 
   const changeLanguage = (lng: string) => {
@@ -22,7 +21,7 @@ const ToggleLanguage = () => {
       <Select
         onChange={handleChange}
         startDecorator={<MdLanguage />}
-        defaultValue={language}
+        defaultValue={'en'}
         color="primary"
         variant="outlined"
       >

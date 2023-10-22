@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import i18n from 'i18next';
 import { toast } from 'react-toastify';
 
-export const signIn = createAsyncThunk('auth/signin', async _thunkAPI => {
+export const signIn = createAsyncThunk('auth/signin', async () => {
   try {
     return { isLoggedIn: true, name: 'Viktoria Murzhak' };
   } catch (err: unknown) {

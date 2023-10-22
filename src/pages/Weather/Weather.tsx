@@ -5,8 +5,10 @@ import { useTranslation } from 'react-i18next';
 import css from './Weather.module.css';
 import { FcCloseUpMode } from 'react-icons/fc';
 import { toast } from 'react-toastify';
-import { getWeather } from '../../services/api';
+
 import DisplayWeather from '../../components/Weather/DisplayWeather';
+
+const API_KEY_WEATER = '1db58593773c169d8e83d55b06a9e635';
 
 const Weather = () => {
   const [weather, setWeather] = useState<any>(null);
@@ -22,8 +24,18 @@ const Weather = () => {
     if (form.city === '') {
       toast.error(t('toast_city'));
     } else {
-      const weather = await getWeather(form.city, form.country);
-      setWeather(weather);
+      const fetchData = async () => {
+        fetch(
+          `https://api.openweathermap.org/data/2.5/weather?q=${form.city},${form.country}&APPID=${API_KEY_WEATER}`
+        )
+          .then(resp => {
+            return resp.json();
+          })
+          .then(data => {
+            setWeather(data);
+          });
+      };
+      fetchData();
     }
   };
 
